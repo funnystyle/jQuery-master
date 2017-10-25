@@ -3,14 +3,36 @@
 <html>
   <head>
     <title>jQuery Adventures</title>
+    <style>
+      .promo {
+        color: red;
+      }
+      #favorite {
+        color: blue;
+      }
+      p {
+        color: yellow;
+      }
+    </style>
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+      $(document).ready(function() {
+        // $('#favorite').text("파리");
+        $('#destinations > li').text('파리');
+      });
+    </script>
   </head>
   <body>
     <h1>Where do you want to go?</h1>
     <h2>Travel Destinations</h2>
     <p>Plan your next adventures</p>
-    <ul>
+    <ul id="destinations">
       <li>Rome</li>
-      <li>Paris</li>
+      <!-- <li id="favorite"> -->
+        <ul>
+          <li>서울</li>
+        </ul>
+      <!-- </li> -->
       <li class='promo'>Rio</li>
     </ul>
   </body>
