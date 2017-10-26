@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./layout.css" />
     <title>Vacation Packages</title>
     <script type="text/javascript" src="./jquery-3.1.1.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
         $("button").on("click", function() {
-          $(this).closest(".confirmation").find(".ticket").slideDown();
+//          $(this).closest(".confirmation").find(".ticket").slideDown();
+          $.ajax('https://api.github.com/users/soongon', {
+            success: function (response) {
+              console.log(response);
+//              $('.ticket')
+//                  .find('span').first()
+//                    .text(response.created_at)
+//                  .nextAll('span').first()
+//                    .text(response.followers)
+//                  .nextAll('span').first()
+//                    .text(response.location)
+//                  .nextAll('a').first()
+//                    .prop('href', response.html_url)
+//                    .text(response.html_url);
+
+              $('.ticket')
+                  .find('span').eq(0)
+                    .text(response.created_at)
+                  .closest('.ticket').find('span').eq(1)
+                    .text(response.followers)
+                  .closest('.ticket').find('span').eq(2)
+                    .text(response.location)
+                  .closest('.ticket').find('a').eq(0)
+                    .prop('href', response.html_url)
+                    .text(response.html_url);
+
+              $('.ticket').slideDown();
+            }
+          });
         });
       });
     </script>
@@ -24,10 +53,10 @@
           <p>Paid 399.99 on January 14, 2013.</p>
           <button>FLIGHT DETAILS</button>
           <div class="ticket">
-            <span>Destination:</span> Honolulu, HI<br/>
-            <span>Depart Date:</span> February 20, 2013 at 09:30<br/>
-            <span>Flight Number:</span> 815 <br/>
-            <span>Boarding pass:</span> <a href="javascript:void(0);" class="viewTicket">View Boarding Pass</a>
+            계정생성일: <span></span> <br/>
+            추종자: <span></span> <br/>
+            서식지: <span></span> <br/>
+            깃허브 주소: <span></span> <a href="javascript:void(0);" class="viewTicket">View Boarding Pass</a>
           </div>
         </div>
       </div>

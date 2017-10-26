@@ -13,6 +13,6 @@ $(document).ready(function () {
   });
 
   $('.confirmation').find('h3').on('mouseout', function() {
-    $(this).closest('.confirmation').find('.ticket').slideUp();
+    $(this).closest('.confirmation').find('.ticket').fadeOut();
   });
 });
