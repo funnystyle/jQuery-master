@@ -12,29 +12,35 @@
           $.ajax('https://api.github.com/users/soongon', {
             success: function (response) {
               console.log(response);
-//              $('.ticket')
-//                  .find('span').first()
-//                    .text(response.created_at)
-//                  .nextAll('span').first()
-//                    .text(response.followers)
-//                  .nextAll('span').first()
-//                    .text(response.location)
-//                  .nextAll('a').first()
-//                    .prop('href', response.html_url)
-//                    .text(response.html_url);
-
               $('.ticket')
-                  .find('span').eq(0)
+                  .find('span').first()
                     .text(response.created_at)
-                  .closest('.ticket').find('span').eq(1)
+                  .nextAll('span').first()
                     .text(response.followers)
-                  .closest('.ticket').find('span').eq(2)
+                  .nextAll('span').first()
                     .text(response.location)
-                  .closest('.ticket').find('a').eq(0)
-                    .prop('href', response.html_url)
-                    .text(response.html_url);
+                  .nextAll('a').first()
+                    .prop('href', response.url)
+                    .text(response.url);
+
+//              $('.ticket')
+//                  .find('span').eq(0)
+//                    .text(response.created_at)
+//                  .closest('.ticket').find('span').eq(1)
+//                    .text(response.followers)
+//                  .closest('.ticket').find('span').eq(2)
+//                    .text(response.location)
+//                  .closest('.ticket').find('a').eq(0)
+//                    .prop('href', response.url)
+//                  .text(response.url);
 
               $('.ticket').slideDown();
+            },
+            beforeSend: function () {
+                $('.confirmation').addClass('is-loading');
+            },
+            complete: function () {
+                $('.confirmation').removeClass('is-loading');
             }
           });
         });
