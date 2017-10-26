@@ -3,6 +3,18 @@
   <head>
     <link rel="stylesheet" type="text/css" href="./layout.css" />
     <title>Vacation Packages</title>
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+      $(document).ready(function () {
+          var price = $('<p style="margin-top: 20px; height: 30px;">From $399.99</p>');
+//          $('button').after(price);
+          $('button').on('click', function() {
+            console.log('btn clicked...');
+            $('.vacation').append(price);
+            $('button').remove();
+          });
+      });
+    </script>
   </head>
   <body>
     <fieldset>

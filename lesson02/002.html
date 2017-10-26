@@ -3,6 +3,8 @@
   <head>
     <link rel="stylesheet" type="text/css" href="./layout.css" />
     <title>Vacation Packages</title>
+    <script src="jquery-3.2.1.js"></script>
+    <script src="app.js"></script>
   </head>
   <body>
     <fieldset>
@@ -11,7 +13,7 @@
       <h3>jQuery Travels</h3>
       <div id="vacations">
         <ul>
-          <li class='vacation'>
+          <li class='vacation' data-price="399.99">
             <h2>Hawaiian Vacation</h2>
             <p>Comments on this deal:</p>
             <ul class="comments">
@@ -22,8 +24,8 @@
           </li>
         </ul>
         <ul>
-          <li class='vacation'>
-            <h2>Olando</h2>
+          <li class='vacation' data-price="199.99">
+            <h2>Orlando</h2>
             <p>Comments on this deal:</p>
             <ul class="comments">
               <li>There aren't any comments on this deal yet.</li>
@@ -32,7 +34,7 @@
           </li>
         </ul>
         <ul>
-          <li class='vacation'>
+          <li class='vacation' data-price="699.99">
             <h2>Visit Japan</h2>
             <p>Comments on this deal:</p>
             <ul class="comments">

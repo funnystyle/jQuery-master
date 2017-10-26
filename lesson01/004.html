@@ -2,12 +2,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <title>jQuery Adventures</title>
     <script src="jquery-3.2.1.js"></script>
     <script>
       $(document).ready(function() {
-        // $('li').first().next().next().text('리오');
-        $('li').last().text('리오');
+//        $('li').first().next().next().text('리오');
+//        $('li').last().text('리오');
+//        $('#destinations').find('li').last().text('리오');
+        $('#destinations').children('li').first().next().text('리오');
+        $('#destinations').children('li').last().text('리오');
+        alert($('ul').last().text());
+        alert($('p').last().text());
       });
     </script>
   </head>
@@ -17,9 +23,11 @@
     <p>Plan your next adventures</p>
     <ul id='destinations'>
       <li>Rome</li>
+      <p>
       <ul id='france'>
         <li>Paris</li>
       </ul>
+      </p>
       <li class='promo'>Rio</li>
     </ul>
   </body>
